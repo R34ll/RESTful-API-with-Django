@@ -6,6 +6,7 @@ from django.template import loader
 
 from .models import User,ROLES
 
+
 def show_users(request):
     if request.method != "GET":
         return redirect("/users")
@@ -86,5 +87,10 @@ def delete_user(request,user_id):
     
     except User.DoesNotExist:
         return redirect("/users")
+
+
+
+def redirect_users(request):
+    return redirect("/users")
 
 
